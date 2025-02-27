@@ -1,0 +1,73 @@
+<html>
+	<head>
+		<title>
+			MyPage
+		</title>
+		<style type='text/css'>
+			.myText{
+				width:200px;
+				height:30px;
+			}
+			.myDiv{
+				border:1px solid #CE7E00;
+				background:#FFF0D9;
+				overflow: scroll;
+				overflow-x: hidden;
+				scrollbar-face-color:#FFF0D9;
+				position:absolute;
+				z-index:10;
+				font-size:12px;
+			}
+			
+			.myDiv a{
+				text-decoration:none;
+				display:block;
+				height:18px;
+				line-height:18px;
+				text-indent:4px;
+				text-align:left;
+			}
+			.myDiv a:link, .myDiv a:visited{
+				color: #2A1B00;
+				background-color:#FFF0D9;
+			}
+			.myDiv a:hover, .myDiv a:active{
+				background-color:#C2C660;
+			}
+		</style>
+		<script>			
+			function showDiv(){
+				var div = document.getElementById('sel');
+				div.style.visibility = "visible";
+			}
+			function hideDiv(){
+				var div = document.getElementById('sel');
+				div.style.visibility="hidden";
+			}
+			function getValue(targetObj,sourceObj){
+					document.getElementById(targetObj).value = sourceObj;
+					hideDiv();
+			}
+		</script>
+	</head>
+	<body>
+		<input type='text' id='txt1' class="myTxt" onkeydown="showDiv();" />
+		<input type="button" value="确定"/>
+		<div id='sel' class='myDiv' style="left:10px; top:40px; width:150px; height:100px; visibility:hidden;">
+					<div>
+						<a href="javascript:getValue('txt1','选择一')">选择一</a>
+					</div>
+					<div>
+						<a href="javascript:getValue('txt1','选择二')">选择二</a>
+					</div>
+					<div>
+						<a href="javascript:getValue('txt1','选择三')">选择三</a>
+					</div>
+					<div>
+						<a href="javascript:getValue('txt1','选择四')">选择四</a>
+					</div>
+			</table>
+		</div>
+		
+	</body>
+</html>
